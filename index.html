@@ -1,379 +1,558 @@
-<!DOCTYPE HTML><!--
+<!DOCTYPE HTML>
+<!--
 	Massively by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
---><html>
+-->
+<html>
 <head>
 	<title>Asrielas Portfolio</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript><style>
-	body {
-		background-color: #020725;
-	}
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<style>
+		:root {
+			--oceana: #010728;
+			--maze: #0F101E;
+			--town: #1E1A1F;
+			--boomtown: #211209;
+			--coliving: #3D262E;
+			--paranormal: #1A0411;
+			--astrocology: #A1D2E8;
+			--white: #FFFFFF;
+		}
 
-	.responsive-video {
-		position: relative;
-		width: 100%;
-		padding-top: 56.25%;
-		overflow: hidden;
-		border-radius: 8px;
-	}
+		html, body {
+			background: #020725;
+			color: #fff;
+		}
 
-	.responsive-video iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		border: 0;
-	}
-</style>
+		body, body * {
+			color: #fff;
+		}
 
-</head><body class="is-preload" style="background-color: #020725;">
-	<!-- Wrapper -->
-	<div id="wrapper" class="fade-in"><!-- Intro -->
-	<div id="intro">
-		<h1>
-			Asrielas<br />
-			Profile
-		</h1>
-		<p>
-			I build living systems where characters think, change, and tell their own stories.
-		</p>
-		<ul class="actions">
-			<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-		</ul>
-	</div>
+		a, a:visited, a:hover, a:active {
+			color: #fff;
+		}
 
-	<!-- Header -->
-	<header id="header">
-		<a href="index.html" class="logo">Asriela</a>
-	</header>
+		img {
+			max-width: 100%;
+			height: auto;
+		}
 
-	<!-- Nav -->
-	<nav id="nav">
-		<ul class="links">
-			<li class="active"><a href="index.html">Games</a></li>
-			<li><a href="art.html">Art</a></li>
-			<!-- <li><a href="applications.html">Applications</a></li> -->
-		</ul>
-		<ul class="icons">
-			<li><a href="https://github.com/Asriela" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-		</ul>
-	</nav>
+		.responsive-video {
+			position: relative;
+			width: 100%;
+			padding-top: 56.25%;
+			overflow: hidden;
+			border-radius: 8px;
+		}
 
-	<!-- Main -->
-	<div id="main">
+		.responsive-video iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border: 0;
+		}
 
-		<!-- Featured Post -->
-		<article class="post featured">
-			<header class="major">
-				<span class="date">2 years</span>
-				<h2>OCEANA</h2>
-				<p>A tribe simulation game set on a dynamic moving island.<br>Made with Unity</p>
-			</header>
+		/* General portfolio section handling */
+		.portfolio-section {
+			color: #fff !important;
+		}
 
-			<div class="responsive-video">
-				<iframe
-					src="https://www.youtube.com/embed/5YeHRfkVJXs"
-					title="Oceana trailer (pre-alpha)"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					referrerpolicy="strict-origin-when-cross-origin"
-					allowfullscreen>
-				</iframe>
-			</div>
+		.portfolio-section .major,
+		.portfolio-section header,
+		.portfolio-section p,
+		.portfolio-section h1,
+		.portfolio-section h2,
+		.portfolio-section h3,
+		.portfolio-section span,
+		.portfolio-section li,
+		.portfolio-section a {
+			color: #fff !important;
+		}
 
-			<ul class="actions special">
-				<li><a href="https://heartdoor.itch.io/oceana" class="button large">PLAY ON ITCH.IO</a></li>
+		.portfolio-section .button,
+		.portfolio-section .button.large,
+		.portfolio-section .button.icon,
+		.portfolio-section .actions.special .button {
+			color: #fff !important;
+			border-color: rgba(255,255,255,0.75) !important;
+		}
+
+		/* Center any single image in a section */
+		.centered-media {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+		}
+
+		.centered-media img,
+		.centered-media video {
+			display: block;
+			width: auto;
+			height: auto;
+			max-width: 100%;
+		}
+
+		/* Reusable side-by-side layout */
+		.split-posts {
+			display: grid !important;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 2rem;
+			align-items: start;
+		}
+
+		.split-posts > article {
+			width: 100% !important;
+			margin: 0 !important;
+			padding: 2rem;
+			box-sizing: border-box;
+			text-align: center;
+		}
+
+		.split-posts .centered-media {
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+		}
+
+		@media screen and (max-width: 980px) {
+			.split-posts {
+				grid-template-columns: 1fr !important;
+			}
+		}
+
+		/* Section background colors */
+		.section-oceana,
+		.section-oceana > article {
+			background-color: var(--oceana) !important;
+		}
+
+		.section-maze,
+		.section-maze > article {
+			background-color: var(--maze) !important;
+		}
+
+		.section-boomtown,
+		.section-boomtown > article {
+			background-color: var(--boomtown) !important;
+		}
+
+		.section-town,
+		.section-town > article {
+			background-color: var(--town) !important;
+		}
+
+		.section-coliving,
+		.section-coliving > article {
+			background-color: var(--coliving) !important;
+		}
+
+		.section-paranormal,
+		.section-paranormal > article {
+			background-color: var(--paranormal) !important;
+		}
+
+		.section-astrocology,
+		.section-astrocology > article {
+			background-color: var(--astrocology) !important;
+		}
+	</style>
+</head>
+<body class="is-preload" style="background-color: #020725; color:#fff;">
+	<div id="wrapper" class="fade-in">
+
+		<div id="intro">
+			<h1>
+				Asrielas<br />
+				Profile
+			</h1>
+			<p>
+				I build living systems where characters think, change, and tell their own stories.
+			</p>
+			<ul class="actions">
+				<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 			</ul>
-			<ul class="actions special">
-				<li><a href="https://github.com/Asriela/OceanaInterpreterCode" class="button large">REVIEW ON GITHUB</a></li>
+		</div>
+
+		<header id="header">
+			<a href="index.html" class="logo">Asriela</a>
+		</header>
+
+		<nav id="nav">
+			<ul class="links">
+				<li class="active"><a href="index.html">Games</a></li>
+				<li><a href="art.html">Art</a></li>
+				<!-- <li><a href="applications.html">Applications</a></li> -->
 			</ul>
-		</article>
-
-		<!-- Posts -->			<!-- Posts -->
-		<section class="posts">
-			<article>
-				<header>
-					<h2>
-						<a href="#">
-							Dynamic tribe AI<br />
-						</a>
-					</h2>
-				</header>
-				<a href="#" class="image fit"><img src="images/trailer.gif" alt="Dynamic tribe AI" /></a>
-				<p>Score-based state machine driven AI that lives out their lives on your island.</p>
-			</article>
-
-			<article>
-				<header>
-					<h2>
-						<a href="#">
-							Scripting language to modify that AI
-						</a>
-					</h2>
-				</header>
-				<a href="#" class="video fit">
-					<video width="100%" controls>
-						<source src="images/scripting_language.mp4" type="video/mp4">
-						Your browser does not support the video tag.
-					</video>
-				</a>
-				<p>I developed my own scripting language called Experiences to let players add custom behaviors to NPC minds.</p>
-			</article>
-
-			<article>
-				<header>
-					<h2><a href="#">Twitch viewers control NPCs</a></h2>
-				</header>
-				<a href="#" class="image fit"><img src="images/twitch.gif" alt="Twitch viewers controlling NPCs" /></a>
-				<p>Twitch viewers can use text commands and emojis to make the NPC under their control perform built-in or user-created actions.</p>
-			</article>
-
-			<article>
-				<header>
-					<h2>
-						<a href="#">
-							Form relationships with NPCs
-						</a>
-					</h2>
-				</header>
-				<a href="#" class="image fit"><img src="images/relationship.gif" alt="Relationship system" /></a>
-				<p>An emoji-based dialogue system allows the player to communicate with the NPC.</p>
-			</article>
-		</section>
-
-		<!-- Featured Post -->
-		<article class="post featured">
-			<header class="major">
-				<span class="date">New project</span>
-				<h2>MAZE OUT</h2>
-				<p>You play an armoured gardener imprisoned in a long-dead maze, digging your way out while learning the ecosystem to survive and escape.<br>Made with Unity</p>
-			</header>
-
-			<a href="#" class="image fit"><img src="images/mazeOutTile.png" alt="Maze Out title" /></a>
-
-			<header>
-				<h2>
-					<a href="#">
-						Learn the maze, its creatures, and the strange item combinations that let you open new paths.<br />
-					</a>
-				</h2>
-			</header>
-
-			<img src="images/mazeOutSpider.gif" alt="Maze Out spider gameplay" width="935" height="528" />
-
-			<header>
-				<h2>
-					<a href="#">
-						Keys unlock randomly generated rooms, so every run becomes a new little labyrinth story.<br />
-					</a>
-				</h2>
-			</header>
-
-			<img src="images/monkeySteals.gif" alt="Maze Out monkey steals gameplay" width="935" height="528" />
-		</article>
-
-		<!-- Featured Post -->
-		<article class="post featured">
-			<header class="major">
-				<span class="date">New project</span>
-				<h2>BOOM TOWN</h2>
-				<p>A roguelike old west town builder where the world stays fast, dynamic, and alive.<br>Made with Unity</p>
-			</header>
-
-			<a href="#" class="image fit"><img src="images/boomTownTitle.png" alt="Boom Town title" /></a>
-
-			<header>
-				<h2>
-					<a href="#">
-						The town feels alive through systems like crime, where gangs physically rob your stores and kill your people unless you can keep lawmen in place, instead of it being a flat background stat.<br />
-					</a>
-				</h2>
-			</header>
-
-			<img src="images/boomTownIntro.gif" alt="Boom Town intro gameplay" width="935" height="528" />
-
-			<header>
-				<h2>
-					<a href="#">
-						Use the money and food from one town to push toward a final destination, where your goodwill or notoriety can buy help and protection. The tension comes from how far you can make it each run.<br />
-					</a>
-				</h2>
-			</header>
-
-			<img src="images/boomTownMap.gif" alt="Boom Town map gameplay" width="935" height="528" />
-		</article>
-
-		<!-- Featured Post -->
-		<article class="post featured">
-			<header class="major">
-				<span class="date">1 week</span>
-				<h2>The Town</h2>
-				<p>Fantasy RPG where NPCs have their own agency and storylines they try to complete<br>Made with Unity</p>
-			</header>
-			<a href="" class="image fit"><img src="images/the_town_title.png" alt="The Town title screen" /></a>
-
-			<header>
-				<h2>
-					<a href="#">
-						NPCs have modular behavior that moves them toward their goals<br />
-					</a>
-				</h2>
-			</header>
-
-			<img src="images/theMurder.gif" alt="The Town gameplay" width="935" height="528" />
-		</article>
-
-		<!-- Featured Post -->
-		<article class="post featured">
-			<header class="major">
-				<span class="date">2 days</span>
-				<h2>Dia</h2>
-				<p>Dia is a branching dialogue scripting language with data integration.<br>Made with Unity</p>
-			</header>
-			<a href="" class="image fit"><img src="images/Dia.png" alt="Dia logo" /></a>
-
-			<header>
-				<h2>
-					<a href="#">
-						The language lets you quickly set up dynamic dialogue so you can focus on the art of writing.<br />
-					</a>
-				</h2>
-			</header>
-
-			<img src="images/branching.gif" alt="Branching dialogue demo" width="962" height="804" />
-		</article>
-
-		<!-- Featured Post -->
-		<article class="post featured">
-			<header class="major">
-				<span class="date">2 months</span>
-				<h2>CO-LIVING</h2>
-				<p>Help interesting characters co-exist<br>Made with Godot</p>
-			</header>
-
-			<img src="images/co_living.png" alt="CO-LIVING" width="864" height="863" />
-			<ul class="actions special">
-				<li><a href="https://heartdoor.itch.io/coliving" class="button large">PLAY ON ITCH.IO</a></li>
+			<ul class="icons">
+				<li><a href="https://github.com/Asriela" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 			</ul>
-			<ul class="actions special">
-				<li><a href="https://github.com/Heartdoor/CoLiving" class="button large">REVIEW ON GITHUB</a></li>
-			</ul>
-		</article>
+		</nav>
 
-		<!-- Posts -->
-		<section class="posts">
-			<article>
-				<header>
-					<h2>
-						<a href="#">
-							Furniture that affects characters<br />
-						</a>
-					</h2>
+		<div id="main">
+
+			<!-- OCEANA -->
+			<article class="post featured portfolio-section section-oceana">
+				<header class="major">
+					<span class="date">2 years</span>
+				
+	<div class="centered-media">
+						<img src="images/oceana_banner.png" alt="OCEANA" width="1280" height="194" />
+					</div>
+					
+					<p>A tribe simulation game set on a dynamic moving island.<br>Made with Unity</p>
 				</header>
-				<a href="#" class="image fit"><img src="images/effects.gif" alt="Furniture effects demo" /></a>
-				<p>For example, a record player has music and vintage effects on the user. Each character has preferences for different effects.</p>
-			</article>
 
-			<article>
-				<header>
-					<h2>
-						<a href="#">
-							Dynamic social interactions
-						</a>
-					</h2>
-				</header>
-				<a href="#" class="image fit"><img src="images/social.gif" alt="Social interaction demo" /></a>
-				<p>Characters can discuss what they are currently doing or what has happened to them in the past. Their actions can also upset each other.</p>
-			</article>
-		</section>
-
-		<!-- Featured Post -->
-		<article class="post featured">
-			<header class="major">
-				<span class="date">5 months</span>
-				<h2>Paranormal Accommodation</h2>
-				<p>Run a hotel for the paranormal<br>Made with Unity</p>
-			</header>
-
-			<img src="images/paranormal-accommodation.jpg" alt="Paranormal Accommodation" width="765" height="564" />
-			<ul class="actions special">
-				<li><a href="https://heartdoor.itch.io/paranormal-accommodation" class="button large">PLAY ON ITCH.IO</a></li>
-			</ul>
-		</article>
-
-		<!-- Posts -->
-		<section class="posts">
-			<article>
-				<header>
-					<h2>
-						<a href="#">
-							Provide for your guests<br />
-						</a>
-					</h2>
-				</header>
-				<a href="#" class="image fit"><img src="images/build_para.gif" alt="Building and supplying guests" /></a>
-			</article>
-
-			<article>
-				<header>
-					<h2>
-						<a href="#">
-							Mediate guest interactions
-						</a>
-					</h2>
-				</header>
-				<a href="#" class="image fit"><img src="images/ghost.gif" alt="Guest interaction demo" /></a>
-			</article>
-		</section>
-
-		<!-- Featured Post -->
-		<article class="post featured">
-			<header class="major">
-				<span class="date">2 weeks</span>
-				<h2>Astrocology</h2>
-				<p>A game about finding the balance between human survival and alien ecosystems.<br>Made with Godot</p>
-			</header>
-			<a href="https://heartdoor.itch.io/astrocology" class="image fit"><img src="images/astrocology.png" alt="Astrocology" /></a>
-
-			<ul class="actions special">
-				<li><a href="https://github.com/Heartdoor/Astrocology" class="button large">GIT HUB</a></li>
-			</ul>
-
-			<ul class="actions special">
-				<li><a href="https://heartdoor.itch.io/astrocology" class="button large">PLAY ON ITCH.IO</a></li>
-			</ul>
-
-			<img src="images/astrocology.gif" alt="Astrocology gameplay" width="700" height="384" />
-		</article>
-	</div>
-
-	<!-- Footer -->
-	<footer id="footer">
-		<section>
-			<form method="post" action="#">
-				<div class="fields">
-					<section>
-						<h3>Email</h3>
-						<p><a href="mailto:asrielapostgieter@gmail.com">asrielapostgieter@gmail.com</a></p>
-					</section>
+				<div class="responsive-video">
+					<iframe src="https://www.youtube.com/embed/5YeHRfkVJXs"
+							title="Oceana trailer (pre-alpha)"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen>
+					</iframe>
 				</div>
-			</form>
-		</section>
-	</footer>
-</div>
 
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+				<ul class="actions special">
+					<li><a href="https://heartdoor.itch.io/oceana" class="button large">PLAY ON ITCH.IO</a></li>
+				</ul>
+				<ul class="actions special">
+					<li><a href="https://github.com/Asriela/OceanaInterpreterCode" class="button large">REVIEW ON GITHUB</a></li>
+				</ul>
+			</article>
 
+			<section class="posts portfolio-section section-oceana">
+				<article>
+					<header>
+						<h2>
+							<a href="#">
+								Dynamic tribe AI<br />
+							</a>
+						</h2>
+					</header>
+					<a href="#" class="image fit"><img src="images/trailer.gif" alt="Dynamic tribe AI" /></a>
+					<p>Score-based state machine driven AI that lives out their lives on your island.</p>
+				</article>
+
+				<article>
+					<header>
+						<h2>
+							<a href="#">
+								Scripting language to modify that AI
+							</a>
+						</h2>
+					</header>
+					<a href="#" class="video fit">
+						<video width="100%" controls>
+							<source src="images/scripting_language.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<p>I developed my own scripting language called Experiences to let players add custom behaviors to NPC minds.</p>
+				</article>
+
+				<article>
+					<header>
+						<h2><a href="#">Twitch viewers control NPCs</a></h2>
+					</header>
+					<a href="#" class="image fit"><img src="images/twitch.gif" alt="Twitch viewers controlling NPCs" /></a>
+					<p>Twitch viewers can use text commands and emojis to make the NPC under their control perform built-in or user-created actions.</p>
+				</article>
+
+				<article>
+					<header>
+						<h2>
+							<a href="#">
+								Form relationships with NPCs
+							</a>
+						</h2>
+					</header>
+					<a href="#" class="image fit"><img src="images/relationship.gif" alt="Relationship system" /></a>
+					<p>An emoji-based dialogue system allows the player to communicate with the NPC.</p>
+				</article>
+			</section>
+
+			<!-- MAZE OUT -->
+			<article class="post featured portfolio-section section-maze">
+				<header class="major">
+					<span class="date">1 month</span>
+		<div class="centered-media">
+						<img src="images/mazeOutTitle.png" alt="MAZE OUT" width="795" height="205" />
+					</div>
+
+					<p>You play an armoured gardener imprisoned in a long-dead maze, digging your way out while learning the ecosystem to survive and escape.<br>Made with Unity</p>
+				</header>
+
+		
+			</article>
+
+			<section class="posts split-posts portfolio-section section-maze" style="padding:2rem;">
+				<article>
+					<header>
+						<h2>
+							<a href="#">
+								Unlock randomly generated rooms.<br />
+							</a>
+						</h2>
+					</header>
+
+					<div class="centered-media">
+						<img src="images/monkeySteals.gif" alt="Maze Out spider gameplay" width="600" height="400" />
+					</div>
+										<p>Keys unlock randomly generated rooms, so every run becomes a new little labyrinth story.</p>
+				</article>
+
+				<article>
+					<header>
+						<h2>
+							<a href="#">
+								Understand the ecology<br />
+							</a>
+						</h2>
+					</header>
+
+					<div class="centered-media">
+						<img src="images/mazeOutCombining.gif" alt="Maze Out monkey steals gameplay" width="600" height="400" />
+					</div>
+										<p>Learn the maze, its creatures, and the strange item combinations that let you open new paths.</p>
+				</article>
+			</section>
+
+			<!-- BOOM TOWN -->
+			<article class="post featured portfolio-section section-boomtown">
+				<header class="major">
+					<span class="date">1 week</span>
+					<div class="centered-media">
+						<img src="images/boomTownTitle.png" alt="BOOM TOWN" width="765" height="510" />
+					</div>
+					<p>A roguelike old west town builder where the world stays fast, dynamic, and alive.<br>Made with Unity</p>
+				</header>
+			</article>
+
+			<section class="posts split-posts portfolio-section section-boomtown" style="padding:2rem;">
+				<article>
+					<header>
+						<h2>
+							<a href="#">
+								Manage a bustling town<br />
+							</a>
+						</h2>
+					</header>
+
+					<div class="centered-media">
+						<img src="images/boomTownIntro.gif" alt="Boom Town intro gameplay" width="638" height="431" />
+					</div>
+
+					<p>No flat crime stats, your town literally gets robbed!</p>
+				</article>
+
+				<article>
+					<header>
+						<h2>
+							<a href="#">
+								Travel to the promised land
+							</a>
+						</h2>
+					</header>
+
+					<div class="centered-media">
+						<img src="images/boomTownMap.gif" alt="Boom Town map gameplay" width="638" height="431" />
+					</div>
+
+					<p>
+						Use food, money or goodwill/notoriety to see how close you can get to your end destination as you lay a trail of towns.
+					</p>
+				</article>
+			</section>
+
+			<!-- THE TOWN -->
+			<article class="post featured portfolio-section section-town">
+				<header class="major">
+					<span class="date">1 week</span>
+					<h2>The Town</h2>
+					<p>Fantasy RPG where NPCs have their own agency and storylines they try to complete<br>Made with Unity</p>
+				</header>
+
+				<div class="centered-media">
+					<img src="images/the_town_title.png" alt="The Town title screen" />
+				</div>
+
+				<header>
+					<h2>
+						<a href="#">
+							NPCs have modular behavior that moves them toward their goals<br />
+						</a>
+					</h2>
+				</header>
+
+				<div class="centered-media">
+					<img src="images/theMurder.gif" alt="The Town gameplay" width="935" height="528" />
+				</div>
+			</article>
+
+			<!-- DIA -->
+			<article class="post featured portfolio-section section-town">
+				<header class="major">
+					<span class="date">1 week</span>
+					<h2>Dia</h2>
+					<p>Dia is a branching dialogue scripting language with data integration.<br>Made with Unity</p>
+				</header>
+
+				<div class="centered-media">
+					<img src="images/Dia.png" alt="Dia logo" />
+				</div>
+
+				<header>
+					<h2>
+						<a href="#">
+							The language lets you quickly set up dynamic dialogue so you can focus on the art of writing.<br />
+						</a>
+					</h2>
+				</header>
+
+				<div class="centered-media">
+					<img src="images/branching.gif" alt="Branching dialogue demo" width="962" height="804" />
+				</div>
+			</article>
+
+			<!-- CO-LIVING -->
+			<article class="post featured portfolio-section section-coliving">
+				<header class="major">
+					<span class="date">2 months</span>
+					<h2>CO-LIVING</h2>
+					<p>Help interesting characters co-exist<br>Made with Godot</p>
+				</header>
+
+				<div class="centered-media">
+					<img src="images/co_living.png" alt="CO-LIVING" width="864" height="863" />
+				</div>
+
+				<ul class="actions special">
+					<li><a href="https://heartdoor.itch.io/coliving" class="button large">PLAY ON ITCH.IO</a></li>
+				</ul>
+				<ul class="actions special">
+					<li><a href="https://github.com/Heartdoor/CoLiving" class="button large">REVIEW ON GITHUB</a></li>
+				</ul>
+			</article>
+
+			<section class="posts portfolio-section section-coliving">
+				<article>
+					<header>
+						<h2>
+							<a href="#">
+								Furniture that affects characters<br />
+							</a>
+						</h2>
+					</header>
+					<a href="#" class="image fit"><img src="images/effects.gif" alt="Furniture effects demo" /></a>
+					<p>For example, a record player has music and vintage effects on the user. Each character has preferences for different effects.</p>
+				</article>
+
+				<article>
+					<header>
+						<h2>
+							<a href="#">
+								Dynamic social interactions
+							</a>
+						</h2>
+					</header>
+					<a href="#" class="image fit"><img src="images/social.gif" alt="Social interaction demo" /></a>
+					<p>Characters can discuss what they are currently doing or what has happened to them in the past. Their actions can also upset each other.</p>
+				</article>
+			</section>
+
+			<!-- PARANORMAL ACCOMMODATION -->
+			<article class="post featured portfolio-section section-paranormal">
+				<header class="major">
+					<span class="date">5 months</span>
+					<h2>Paranormal Accommodation</h2>
+					<p>Run a hotel for the paranormal<br>Made with Unity</p>
+				</header>
+
+				<div class="centered-media">
+					<img src="images/paranormal-accommodation.jpg" alt="Paranormal Accommodation" width="765" height="564" />
+				</div>
+
+				<ul class="actions special">
+					<li><a href="https://heartdoor.itch.io/paranormal-accommodation" class="button large">PLAY ON ITCH.IO</a></li>
+				</ul>
+			</article>
+
+			<section class="posts portfolio-section section-paranormal">
+				<article>
+					<header>
+						<h2>
+							<a href="#">
+								Provide for your guests<br />
+							</a>
+						</h2>
+					</header>
+					<a href="#" class="image fit"><img src="images/build_para.gif" alt="Building and supplying guests" /></a>
+				</article>
+
+				<article>
+					<header>
+						<h2>
+							<a href="#">
+								Mediate guest interactions
+							</a>
+						</h2>
+					</header>
+					<a href="#" class="image fit"><img src="images/ghost.gif" alt="Guest interaction demo" /></a>
+				</article>
+			</section>
+
+			<!-- ASTROCLOGY -->
+			<article class="post featured portfolio-section section-astrocology">
+				<header class="major">
+					<span class="date">2 weeks</span>
+					<h2>Astrocology</h2>
+					<p>A game about finding the balance between human survival and alien ecosystems.<br>Made with Godot</p>
+				</header>
+
+				<div class="centered-media">
+					<img src="images/astrocology.png" alt="Astrocology" />
+				</div>
+
+				<ul class="actions special">
+					<li><a href="https://github.com/Heartdoor/Astrocology" class="button large">GIT HUB</a></li>
+				</ul>
+
+				<ul class="actions special">
+					<li><a href="https://heartdoor.itch.io/astrocology" class="button large">PLAY ON ITCH.IO</a></li>
+				</ul>
+
+				<div class="centered-media">
+					<img src="images/astrocology.gif" alt="Astrocology gameplay" width="700" height="384" />
+				</div>
+			</article>
+
+		</div>
+
+		<footer id="footer">
+			<section>
+				<form method="post" action="#">
+					<div class="fields">
+						<section>
+							<h3>Email</h3>
+							<p><a href="mailto:asrielapostgieter@gmail.com">asrielapostgieter@gmail.com</a></p>
+						</section>
+					</div>
+				</form>
+			</section>
+		</footer>
+	</div>
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 </body>
-			</html>
+</html>
